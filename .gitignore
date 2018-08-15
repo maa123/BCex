@@ -21,3 +21,8 @@ run
 
 #mac
 .DS_Store
+
+#other
+.vscode/
+modules/
+*.log

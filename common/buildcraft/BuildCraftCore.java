@@ -225,6 +225,10 @@ public class BuildCraftCore extends BuildCraftMod {
 	@SideOnly(Side.CLIENT)
 	public static IIcon stripesLaserTexture;
 	@SideOnly(Side.CLIENT)
+	public static IIcon yellowLaserTexture;
+	@SideOnly(Side.CLIENT)
+	public static IIcon greenLaserTexture;
+	@SideOnly(Side.CLIENT)
 	public static IIcon transparentTexture;
 	@SideOnly(Side.CLIENT)
 	public static IIconProvider iconProvider;
@@ -611,6 +615,8 @@ public class BuildCraftCore extends BuildCraftMod {
 			BuildCraftCore.redLaserTexture = event.map.registerIcon("buildcraftcore:laserBox/blockRedLaser");
 			BuildCraftCore.blueLaserTexture = event.map.registerIcon("buildcraftcore:laserBox/blockBlueLaser");
 			BuildCraftCore.stripesLaserTexture = event.map.registerIcon("buildcraftcore:laserBox/blockStripesLaser");
+			BuildCraftCore.yellowLaserTexture = event.map.registerIcon("buildcraftcore:laserBox/blockYellowLaser");
+			BuildCraftCore.greenLaserTexture = event.map.registerIcon("buildcraftcore:laserBox/blockGreenLaser");
 			BuildCraftCore.transparentTexture = event.map.registerIcon("buildcraftcore:misc/transparent");
 			RenderLEDTile.registerBlockIcons(event.map);
 		}

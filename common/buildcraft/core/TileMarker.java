@@ -150,12 +150,30 @@ public class TileMarker extends TileBuildCraft implements ITileAreaProvider {
 			signals = null;
 		}
 		if (showSignals) {
-			signals = new EntityBlock[6];
+			signals = new EntityBlock[50];
 			if (!origin.isSet() || !origin.vect[0].isSet()) {
-				signals[0] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord), new Position(xCoord + DefaultProps.MARKER_RANGE - 1, yCoord, zCoord),
+				//range:color + -
+				//0-64:Blue 0 1
+				//64-128:Green 6 7
+				//128-192:Yellow 8 9
+				//192-256:Red 10 11
+				signals[0] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord), new Position(xCoord + 63, yCoord, zCoord),
 						LaserKind.Blue);
-				signals[1] = LaserUtils.createLaser(worldObj, new Position(xCoord - DefaultProps.MARKER_RANGE + 1, yCoord, zCoord), new Position(xCoord, yCoord, zCoord),
+				signals[1] = LaserUtils.createLaser(worldObj, new Position(xCoord - 63, yCoord, zCoord), new Position(xCoord, yCoord, zCoord),
 						LaserKind.Blue);
+				signals[6] = LaserUtils.createLaser(worldObj, new Position(xCoord + 63, yCoord, zCoord), new Position(xCoord + 127, yCoord, zCoord),
+						LaserKind.Green);
+				signals[7] = LaserUtils.createLaser(worldObj, new Position(xCoord - 127, yCoord, zCoord), new Position(xCoord - 63, yCoord, zCoord),
+						LaserKind.Green);
+				signals[8] = LaserUtils.createLaser(worldObj, new Position(xCoord + 127, yCoord, zCoord), new Position(xCoord + 191, yCoord, zCoord),
+						LaserKind.Yellow);
+				signals[9] = LaserUtils.createLaser(worldObj, new Position(xCoord - 191, yCoord, zCoord), new Position(xCoord - 127, yCoord, zCoord),
+						LaserKind.Yellow);
+				signals[10] = LaserUtils.createLaser(worldObj, new Position(xCoord + 191, yCoord, zCoord), new Position(xCoord + 255, yCoord, zCoord),
+						LaserKind.Red);
+				signals[11] = LaserUtils.createLaser(worldObj, new Position(xCoord - 255, yCoord, zCoord), new Position(xCoord - 191, yCoord, zCoord),
+						LaserKind.Red);
+				
 			}
 
 			if (!origin.isSet() || !origin.vect[1].isSet()) {
@@ -163,13 +181,94 @@ public class TileMarker extends TileBuildCraft implements ITileAreaProvider {
 						LaserKind.Blue);
 				signals[3] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord, yCoord, zCoord),
 						LaserKind.Blue);
+				signals[18] = LaserUtils.createLaser(worldObj, new Position(xCoord + 63, yCoord, zCoord), new Position(xCoord + 63, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Blue);
+				signals[19] = LaserUtils.createLaser(worldObj, new Position(xCoord + 63, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord + 63, yCoord, zCoord),
+						LaserKind.Blue);
+				signals[20] = LaserUtils.createLaser(worldObj, new Position(xCoord - 63, yCoord, zCoord), new Position(xCoord - 63, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Blue);
+				signals[21] = LaserUtils.createLaser(worldObj, new Position(xCoord - 63, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord - 63, yCoord, zCoord),
+						LaserKind.Blue);
+				signals[22] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord + 63), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord + 63),
+						LaserKind.Blue);
+				signals[23] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord + 63), new Position(xCoord, yCoord, zCoord + 63),
+						LaserKind.Blue);
+				signals[24] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 63), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord - 63),
+						LaserKind.Blue);
+				signals[25] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord - 63), new Position(xCoord, yCoord, zCoord - 63),
+						LaserKind.Blue);
+				signals[26] = LaserUtils.createLaser(worldObj, new Position(xCoord + 127, yCoord, zCoord), new Position(xCoord + 127, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Green);
+				signals[27] = LaserUtils.createLaser(worldObj, new Position(xCoord + 127, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord + 127, yCoord, zCoord),
+						LaserKind.Green);
+				signals[28] = LaserUtils.createLaser(worldObj, new Position(xCoord - 127, yCoord, zCoord), new Position(xCoord - 127, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Green);
+				signals[29] = LaserUtils.createLaser(worldObj, new Position(xCoord - 127, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord - 127, yCoord, zCoord),
+						LaserKind.Green);
+				signals[30] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord + 127), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord + 127),
+						LaserKind.Green);
+				signals[31] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord + 127), new Position(xCoord, yCoord, zCoord + 127),
+						LaserKind.Green);
+				signals[32] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 127), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord - 127),
+						LaserKind.Green);
+				signals[33] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord - 127), new Position(xCoord, yCoord, zCoord - 127),
+						LaserKind.Green);
+				signals[34] = LaserUtils.createLaser(worldObj, new Position(xCoord + 191, yCoord, zCoord), new Position(xCoord + 191, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Yellow);
+				signals[35] = LaserUtils.createLaser(worldObj, new Position(xCoord + 191, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord + 191, yCoord, zCoord),
+						LaserKind.Yellow);
+				signals[36] = LaserUtils.createLaser(worldObj, new Position(xCoord - 191, yCoord, zCoord), new Position(xCoord - 191, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Yellow);
+				signals[37] = LaserUtils.createLaser(worldObj, new Position(xCoord - 191, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord - 191, yCoord, zCoord),
+						LaserKind.Yellow);
+				signals[38] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord + 191), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord + 191),
+						LaserKind.Yellow);
+				signals[39] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord + 191), new Position(xCoord, yCoord, zCoord + 191),
+						LaserKind.Yellow);
+				signals[40] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 191), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord - 191),
+						LaserKind.Yellow);
+				signals[41] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord - 191), new Position(xCoord, yCoord, zCoord - 191),
+						LaserKind.Yellow);
+				signals[42] = LaserUtils.createLaser(worldObj, new Position(xCoord + 255, yCoord, zCoord), new Position(xCoord + 255, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Red);
+				signals[43] = LaserUtils.createLaser(worldObj, new Position(xCoord + 255, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord + 255, yCoord, zCoord),
+						LaserKind.Red);
+				signals[44] = LaserUtils.createLaser(worldObj, new Position(xCoord - 255, yCoord, zCoord), new Position(xCoord - 255, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord),
+						LaserKind.Red);
+				signals[45] = LaserUtils.createLaser(worldObj, new Position(xCoord - 255, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord), new Position(xCoord - 255, yCoord, zCoord),
+						LaserKind.Red);
+				signals[46] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord + 255), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord + 255),
+						LaserKind.Red);
+				signals[47] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord + 255), new Position(xCoord, yCoord, zCoord + 255),
+						LaserKind.Red);
+				signals[48] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 255), new Position(xCoord, yCoord + DefaultProps.MARKER_RANGE - 1, zCoord - 255),
+						LaserKind.Red);
+				signals[49] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord - DefaultProps.MARKER_RANGE + 1, zCoord - 255), new Position(xCoord, yCoord, zCoord - 255),
+						LaserKind.Red);
 			}
 
 			if (!origin.isSet() || !origin.vect[2].isSet()) {
-				signals[4] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord), new Position(xCoord, yCoord, zCoord + DefaultProps.MARKER_RANGE - 1),
+				//range:color + -
+				//0-64:Blue 4 5
+				//64-128:Green 12 13
+				//128-192:Yellow 14 15
+				//192-256:Red 16 17
+				signals[4] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord), new Position(xCoord, yCoord, zCoord + 63),
 						LaserKind.Blue);
-				signals[5] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - DefaultProps.MARKER_RANGE + 1), new Position(xCoord, yCoord, zCoord),
+				signals[5] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 63), new Position(xCoord, yCoord, zCoord),
 						LaserKind.Blue);
+				signals[12] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord + 63), new Position(xCoord, yCoord, zCoord + 127),
+						LaserKind.Green);
+				signals[13] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 127), new Position(xCoord, yCoord, zCoord - 63),
+						LaserKind.Green);
+				signals[14] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord + 127), new Position(xCoord, yCoord, zCoord + 191),
+						LaserKind.Yellow);
+				signals[15] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 191), new Position(xCoord, yCoord, zCoord - 127),
+						LaserKind.Yellow);
+				signals[16] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord + 191), new Position(xCoord, yCoord, zCoord + 255),
+						LaserKind.Red);
+				signals[17] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 255), new Position(xCoord, yCoord, zCoord - 191),
+						LaserKind.Red);
 			}
 		}
 	}

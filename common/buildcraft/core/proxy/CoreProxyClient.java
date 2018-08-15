@@ -118,6 +118,12 @@ public class CoreProxyClient extends CoreProxy {
 			case Stripes:
 				eb.setTexture(BuildCraftCore.stripesLaserTexture);
 				break;
+			case Yellow:
+				eb.setTexture(BuildCraftCore.yellowLaserTexture);
+				break;
+			case Green:
+				eb.setTexture(BuildCraftCore.greenLaserTexture);
+				break;
 		}
 		return eb;
 	}
