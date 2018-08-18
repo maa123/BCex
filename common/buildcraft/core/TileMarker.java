@@ -152,11 +152,6 @@ public class TileMarker extends TileBuildCraft implements ITileAreaProvider {
 		if (showSignals) {
 			signals = new EntityBlock[50];
 			if (!origin.isSet() || !origin.vect[0].isSet()) {
-				//range:color + -
-				//0-64:Blue 0 1
-				//64-128:Green 6 7
-				//128-192:Yellow 8 9
-				//192-256:Red 10 11
 				signals[0] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord), new Position(xCoord + 63, yCoord, zCoord),
 						LaserKind.Blue);
 				signals[1] = LaserUtils.createLaser(worldObj, new Position(xCoord - 63, yCoord, zCoord), new Position(xCoord, yCoord, zCoord),
@@ -248,11 +243,6 @@ public class TileMarker extends TileBuildCraft implements ITileAreaProvider {
 			}
 
 			if (!origin.isSet() || !origin.vect[2].isSet()) {
-				//range:color + -
-				//0-64:Blue 4 5
-				//64-128:Green 12 13
-				//128-192:Yellow 14 15
-				//192-256:Red 16 17
 				signals[4] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord), new Position(xCoord, yCoord, zCoord + 63),
 						LaserKind.Blue);
 				signals[5] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 63), new Position(xCoord, yCoord, zCoord),
@@ -270,6 +260,13 @@ public class TileMarker extends TileBuildCraft implements ITileAreaProvider {
 				signals[17] = LaserUtils.createLaser(worldObj, new Position(xCoord, yCoord, zCoord - 255), new Position(xCoord, yCoord, zCoord - 191),
 						LaserKind.Red);
 			}
+		} else {
+			for (EntityBlock b : signals) {
+				if (b != null) {
+					CoreProxy.proxy.removeEntity(b);
+				}
+			}
+			signals = null;
 		}
 	}
 
