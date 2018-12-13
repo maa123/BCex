@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/maa123/BCex.svg?style=svg)](https://circleci.com/gh/maa123/BCex)
+
 ## Welcome to Buildcraft on GitHub
 
 ### Reporting an issue
