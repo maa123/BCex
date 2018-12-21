@@ -553,7 +553,7 @@ public class TileMarker extends TileBuildCraft implements ITileAreaProvider {
 			if (m.isSet()) {
 				worldObj.setBlockToAir(m.x, m.y, m.z);
 
-				BuildCraftCore.markerBlock.dropBlockAsItem(worldObj, m.x, m.y, m.z, 0, 0);
+				BuildCraftCore.markerBlock.dropBlockAsItem(worldObj, o.vectO.x, o.vectO.y, o.vectO.z, 0, 0);
 			}
 		}
 
