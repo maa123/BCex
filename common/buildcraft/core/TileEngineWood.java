@@ -75,10 +75,10 @@ public class TileEngineWood extends TileEngineBase implements IRedstoneEngine {
 		}
 	}
 
-	@Override
+	/*@Override
 	public ConnectOverride overridePipeConnection(IPipeTile.PipeType type, ForgeDirection with) {
 		return ConnectOverride.DISCONNECT;
-	}
+	}*/
 
 	@Override
 	public boolean isBurning() {
