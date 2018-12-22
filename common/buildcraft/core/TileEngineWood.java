@@ -8,13 +8,13 @@
  */
 package buildcraft.core;
 
-import net.minecraft.tileentity.TileEntity;
+//import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 
 import net.minecraftforge.common.util.ForgeDirection;
 
 import buildcraft.api.power.IRedstoneEngine;
-import buildcraft.api.power.IRedstoneEngineReceiver;
+//import buildcraft.api.power.IRedstoneEngineReceiver;
 //import buildcraft.api.transport.IPipeTile;
 import buildcraft.core.lib.engines.TileEngineBase;
 
@@ -117,13 +117,13 @@ public class TileEngineWood extends TileEngineBase implements IRedstoneEngine {
 		if (progressPart == 2 && !hasSent) {
 			hasSent = true;
 
-			TileEntity tile = getTile(orientation);
+			//TileEntity tile = getTile(orientation);
 
-			if (tile instanceof IRedstoneEngineReceiver && ((IRedstoneEngineReceiver) tile).canConnectRedstoneEngine(orientation.getOpposite())) {
-				super.sendPower();
-			} else {
-				this.energy = 0;
-			}
+			//if (tile instanceof IRedstoneEngineReceiver && ((IRedstoneEngineReceiver) tile).canConnectRedstoneEngine(orientation.getOpposite())) {
+			super.sendPower();
+			//} else {
+			//	this.energy = 0;
+			//}
 		} else if (progressPart != 2) {
 			hasSent = false;
 		}
