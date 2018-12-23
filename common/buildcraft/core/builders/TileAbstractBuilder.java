@@ -51,7 +51,7 @@ public abstract class TileAbstractBuilder extends TileBuildCraft implements ITil
 		 * The builder should not act as a gigantic energy buffer, thus we keep enough
 		 * build energy to build about 2 stacks' worth of blocks.
 		 */
-		this.setBattery(new RFBattery(4 * 2 * 64 * BuilderAPI.BUILD_ENERGY, 4 * 1000, 0));
+		this.setBattery(new RFBattery(8 * 2 * 64 * BuilderAPI.BUILD_ENERGY, 8 * 1000, 0));
 	}
 
 	@Override
