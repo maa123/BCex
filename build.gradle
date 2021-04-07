@@ -231,12 +231,6 @@ jar {
 	from sourceSets.api.output
 }
 
-checkstyle {
-	configFile = file('guidelines/buildcraft.checkstyle')
-}
-
-checkstyleApi.exclude 'cofh/**'
-
 // make sure all of these happen when we run build
 build.dependsOn sourceJar, javadocJar, deobfJar, apiJar
 
