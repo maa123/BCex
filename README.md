@@ -1,4 +1,8 @@
-[![CircleCI](https://circleci.com/gh/maa123/BCex.svg?style=svg)](https://circleci.com/gh/maa123/BCex)
+
+[![Build](https://github.com/maa123/BCex/actions/workflows/gradle.yml/badge.svg)](https://github.com/maa123/BCex/actions/workflows/gradle.yml)
+
+
+
 
 ## Welcome to Buildcraft on GitHub
 
