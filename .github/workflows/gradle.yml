@@ -16,9 +16,9 @@ jobs:
     - name: Cache multiple pathh
       uses: actions/cache@v2
       with:
-      path: |
-        ~/.gradle
-      key: ${{ runner.os }}-dependencies-${{ hashFiles('**/*.gradle') }}
+        path: |
+          ~/.gradle
+        key: ${{ runner.os }}-dependencies-${{ hashFiles('**/*.gradle') }}
     - name: Permission
       run: chmod +x ./gradlew
     - name: Build with Gradle
